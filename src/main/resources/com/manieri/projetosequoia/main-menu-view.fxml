@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.manieri.projetosequoia.ui.mainmenu.MainMenuController">
-    <children>
-        <ButtonBar layoutY="360.0" prefHeight="40.0" prefWidth="600.0">
-            <buttons>
-                <Button mnemonicParsing="false" text="Button" />
-            </buttons>
-        </ButtonBar>
-    </children>
+<AnchorPane prefHeight="430.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.manieri.projetosequoia.ui.mainmenu.MainMenuController">
+   <children>
+      <AnchorPane layoutX="221.0" prefHeight="430.0" prefWidth="479.0" />
+      <AnchorPane prefHeight="729.0" prefWidth="221.0" style="-fx-background-color: #BFDDF3;">
+         <children>
+            <AnchorPane prefHeight="1027.0" prefWidth="50.0" style="-fx-background-color: #ffffff; -fx-background-radius: 5em;" />
+            <JFXButton alignment="BASELINE_LEFT" contentDisplay="RIGHT" prefHeight="50.0" prefWidth="221.0" text="Todos os processos" />
+            <JFXButton alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutY="50.0" prefHeight="50.0" prefWidth="221.0" text="Cadastro de usuarios" />
+            <JFXButton alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutY="99.0" prefHeight="50.0" prefWidth="221.0" text="Normas" textAlignment="RIGHT" />
+            <JFXButton alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutY="149.0" prefHeight="50.0" prefWidth="221.0" text="Custos " AnchorPane.leftAnchor="0.0" />
+            <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" contentDisplay="RIGHT" layoutY="199.0" prefHeight="50.0" prefWidth="221.0" text="Todos os processos" />
+            <FontAwesomeIconView glyphName="FILE" layoutX="18.0" layoutY="228.0" />
+            <FontAwesomeIconView glyphName="MONEY" layoutX="18.0" layoutY="178.0" />
+            <FontAwesomeIconView glyphName="BOOK" layoutX="18.0" layoutY="128.0" />
+            <FontAwesomeIconView layoutX="17.0" layoutY="29.0" />
+            <FontAwesomeIconView glyphName="USERS" layoutX="18.0" layoutY="79.0" />
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>
