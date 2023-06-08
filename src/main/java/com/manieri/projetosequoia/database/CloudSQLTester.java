@@ -31,6 +31,7 @@ public class CloudSQLTester {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
+            
 
             return subscriblers;
         }
