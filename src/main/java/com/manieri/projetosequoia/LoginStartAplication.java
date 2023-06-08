@@ -9,7 +9,9 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
-public class LoginStartAplication extends Application {
+public class
+LoginStartAplication extends Application {
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(LoginStartAplication.class.getResource("login-view.fxml"));
