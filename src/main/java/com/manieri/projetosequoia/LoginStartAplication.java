@@ -17,6 +17,8 @@ LoginStartAplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(LoginStartAplication.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
+        
+
         LoginController controller = fxmlLoader.getController();
         controller.setStage(stage);
 
