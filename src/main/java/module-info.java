@@ -6,8 +6,10 @@ module com.manieri.projetosequoia {
     requires net.synedra.validatorfx;
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
+    requires com.calendarfx.view;
 
     opens com.manieri.projetosequoia to javafx.fxml;
     exports com.manieri.projetosequoia;
     exports com.manieri.projetosequoia.ui.mainmenu;
+
 }

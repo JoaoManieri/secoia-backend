@@ -2,6 +2,7 @@ package com.manieri.projetosequoia;
 
 import com.manieri.projetosequoia.ui.mainmenu.MainMenuAplication;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -24,10 +25,13 @@ public class LoginController{
     @FXML
     protected void clicLogin() throws Exception {
 
+
         stage.close();
 
-        Stage stage = new Stage();
-        MainMenuAplication mainMenu = new MainMenuAplication();
-        mainMenu.start(stage);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setRoot(this);
+        loader.load(getClass().getResourceAsStream("main-menu-side-bar-view.fxml"));
+
+        new MainMenuAplication().start(new Stage());
     }
 }
