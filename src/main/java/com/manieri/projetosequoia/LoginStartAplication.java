@@ -4,10 +4,12 @@ import com.manieri.projetosequoia.database.CloudSQLTester;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class
 LoginStartAplication extends Application {
@@ -21,6 +23,10 @@ LoginStartAplication extends Application {
 
         LoginController controller = fxmlLoader.getController();
         controller.setStage(stage);
+
+        Image icon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/manieri/projetosequoia/img/logotipo.png")));
+        stage.getIcons().add(icon);
+
 
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setTitle("Login");

@@ -1,29 +1,20 @@
 package com.manieri.projetosequoia.ui.mainmenu;
 
 import com.manieri.projetosequoia.LoginStartAplication;
+import com.manieri.projetosequoia.ui.mainmenu.sideBarSelections.ControllerCostumers;
+import com.manieri.projetosequoia.ui.mainmenu.sideBarSelections.ControllerOrders;
+import com.manieri.projetosequoia.ui.mainmenu.sideBarSelections.ControllerRules;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
 public class MainMenuController {
-
-    @FXML
-    private Button button_normas;
-
-    @FXML
-    private Button button_orcaments;
-
-    @FXML
-    private Button button_settings;
-
-    @FXML
-    private Button button_users;
 
     @FXML
     private AnchorPane fragment_clientes;
@@ -38,34 +29,45 @@ public class MainMenuController {
     private AnchorPane fragment_orcamento;
 
     @FXML
-    private AnchorPane root_view;
-
-    @FXML
     private TabPane tabtext;
 
     @FXML
-    private AnchorPane tabplane;
+    private VBox mainMenu_vbox;
 
 
     @FXML
-    void clic_costumers(){
-        fragment_clientes.toFront();
+    void clic_orders() {
+        fragment_orcamento.toFront();
+        ControllerOrders cm = new ControllerOrders(mainMenu_vbox);
+        cm.changeStatus();
+        cm.actionSubMenu(2);
+
     }
+
     @FXML
-    void clic_settings(){
+    void clic_costumers() {
+        fragment_clientes.toFront();
+        ControllerCostumers cm = new ControllerCostumers(mainMenu_vbox);
+        cm.changeStatus();
+        cm.actionSubMenu(3);
+    }
+
+    @FXML
+    void clic_rules() {
+        fragment_normas.toFront();
+        ControllerRules cm = new ControllerRules(mainMenu_vbox);
+        cm.changeStatus();
+        cm.actionSubMenu(4);
+    }
+
+    @FXML
+    void clic_settings() {
         fragment_configuracoes.toFront();
     }
-    @FXML
-    void clic_rules(){
-        fragment_normas.toFront();
-    }
-    @FXML
-    void clic_orders(){
-        fragment_orcamento.toFront();
-    }
+
 
     @FXML
-    void newQuery(){
+    void newQuery() {
         try {
             FXMLLoader loader = new FXMLLoader(LoginStartAplication.class.getResource("main-menu-view.fxml"));
             Node conteudo = loader.load();
@@ -77,7 +79,4 @@ public class MainMenuController {
             e.printStackTrace();
         }
     }
-
-
-
 }
