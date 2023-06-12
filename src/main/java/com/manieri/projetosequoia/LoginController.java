@@ -25,13 +25,8 @@ public class LoginController{
     @FXML
     protected void clicLogin() throws Exception {
 
-
         stage.close();
-
-        FXMLLoader loader = new FXMLLoader();
-        loader.setRoot(this);
-        loader.load(getClass().getResourceAsStream("main-menu-side-bar-view.fxml"));
-
         new MainMenuAplication().start(new Stage());
+
     }
 }

@@ -27,7 +27,13 @@ LoginStartAplication extends Application {
         stage.setScene(scene);
         stage.show();
 
-        getUsersTest();
+        try{
+            controller.clicLogin();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        //getUsersTest();
     }
 
     public void getUsersTest() { new CloudSQLTester().handlerRequest(); }
