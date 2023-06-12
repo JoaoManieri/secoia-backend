@@ -28,9 +28,7 @@ LoginStartAplication extends Application {
         getUsersTest();
     }
 
-    public void getUsersTest() {
-        new CloudSQLTester().handlerRequest();
-    }
+    public void getUsersTest() { new CloudSQLTester().handlerRequest(); }
 
     public static void main(String[] args) {
         launch();
