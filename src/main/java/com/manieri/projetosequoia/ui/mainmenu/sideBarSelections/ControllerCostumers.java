@@ -19,8 +19,8 @@ public class ControllerCostumers extends ControllerSubMenu implements ModelSubMe
 
     @Override
     public void actionSubMenu(int relativeIndex) {
-        Button newOrder = new Button(" - Novo orçamento");
-        newOrder.setId("newOrder_button");
+        Button newOrder = new Button(" - Novo cliente");
+        newOrder.setId("newCostummer_button");
         newOrder.setAlignment(Pos.BASELINE_LEFT);
         newOrder.setOnAction(e -> clic_new_order());
         newOrder.setPrefHeight(40.0);
@@ -31,7 +31,7 @@ public class ControllerCostumers extends ControllerSubMenu implements ModelSubMe
         newOrder.setFont(new Font(14.0));
         arrayButtons.add(newOrder);
 
-        Button editOrder = new Button(" - Editar orçamento");
+        Button editOrder = new Button(" - Editar ");
         editOrder.setId("editOrder_button");
         editOrder.setAlignment(Pos.BASELINE_LEFT);
         editOrder.setOnAction(e -> clic_edit_order());
