@@ -10,8 +10,7 @@ public class CostumerDAO {
 
 
     public void setCostumer(Costumer costumer) throws SQLException {
-        Connection conn = new DataBaseRepository().handlerRequest();
-        conn.prepareStatement("");
+
     }
 
 
