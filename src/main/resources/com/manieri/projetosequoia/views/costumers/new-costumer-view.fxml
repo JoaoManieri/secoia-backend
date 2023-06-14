@@ -47,5 +47,6 @@
             <TextField fx:id="complemento_textField" layoutX="100.0" layoutY="79.0" prefHeight="25.0" prefWidth="687.0" />
          </children>
       </Pane>
+      <Button fx:id="save_button" layoutX="8.0" layoutY="316.0" mnemonicParsing="false" onAction="#saveData" text="Salvar" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="316.0" />
    </children>
 </AnchorPane>

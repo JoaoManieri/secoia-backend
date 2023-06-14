@@ -40,10 +40,7 @@ LoginStartAplication extends Application {
             throw new RuntimeException(e);
         }
 
-        //getUsersTest();
     }
-
-    public void getUsersTest() { new CloudSQLTester().handlerRequest(); }
 
     public static void main(String[] args) {
         launch();

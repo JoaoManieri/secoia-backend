@@ -20,38 +20,45 @@ public class ControllerRules extends ControllerSubMenu implements ModelSubMenu{
 
     ArrayList<Button> arrayButtons = new ArrayList<Button>();
 
+    private final TabPane _tabPane;
+
     public ControllerRules(VBox vboxMainMenu, TabPane tabPane) {
         super(vboxMainMenu, tabPane);
+        this._tabPane = tabPane;
     }
 
     @Override
     public void actionSubMenu(int relativeIndex) {
 
-        Button newOrder = new Button(" - Nova especificação");
-        newOrder.setId("newSpecification_button");
-        newOrder.setAlignment(Pos.BASELINE_LEFT);
-        newOrder.setOnAction(e -> clickNewOrder());
-        newOrder.setPrefHeight(40.0);
-        newOrder.setPrefWidth(260.0);
-        newOrder.getStylesheets().add(style);
-        newOrder.setTextFill(Color.WHITE);
-        newOrder.setPadding(new Insets(0, 0, 0, 80.0));
-        newOrder.setFont(new Font(14.0));
-        arrayButtons.add(newOrder);
+        Button button1 = new Button(" - Nova especificação");
+        button1.setId("newSpecification_button");
+        button1.setAlignment(Pos.BASELINE_LEFT);
+        button1.setOnAction(e -> newSpecification());
+        button(button1);
 
-        Button editOrder = new Button(" - Nova norma");
-        editOrder.setId("editRule_button");
-        editOrder.setAlignment(Pos.BASELINE_LEFT);
-        editOrder.setOnAction(e -> clickEditOrder());
-        editOrder.setPrefHeight(40.0);
-        editOrder.setPrefWidth(260.0);
-        editOrder.getStylesheets().add(style);
-        editOrder.setTextFill(Color.WHITE);
-        editOrder.setPadding(new Insets(0, 0, 0, 80.0));
-        editOrder.setFont(new Font(14.0));
-        arrayButtons.add(editOrder);
+        Button button2 = new Button(" - Nova norma");
+        button2.setId("newRule_button");
+        button2.setAlignment(Pos.BASELINE_LEFT);
+        button2.setOnAction(e -> newRule());
+        button(button2);
+
+        Button button3 = new Button(" - Editar norma");
+        button3.setId("editRule_button");
+        button3.setAlignment(Pos.BASELINE_LEFT);
+        button3.setOnAction(e -> editRule());
+        button(button3);
 
         setSubSession(relativeIndex,arrayButtons,StatusSubMenu.subsessionRulesIsOpen);
+    }
+
+    private void button(Button button) {
+        button.setPrefHeight(40.0);
+        button.setPrefWidth(260.0);
+        button.getStylesheets().add(style);
+        button.setTextFill(Color.WHITE);
+        button.setPadding(new Insets(0, 0, 0, 80.0));
+        button.setFont(new Font(14.0));
+        arrayButtons.add(button);
     }
 
     @Override
@@ -60,6 +67,58 @@ public class ControllerRules extends ControllerSubMenu implements ModelSubMenu{
             StatusSubMenu.subsessionRulesIsOpen = true;
         } else {
             StatusSubMenu.subsessionRulesIsOpen = false;
+        }
+    }
+
+    @FXML
+    void newSpecification() {
+        try {
+            _tabPane.toFront();
+            FXMLLoader loader = new FXMLLoader(LoginStartAplication.class.getResource("views/rules/new-specification-view.fxml"));
+            Node content = loader.load();
+
+            Tab novaAba = new Tab("Nova Especificação");
+            novaAba.setContent(content);
+            _tabPane.getTabs().add(novaAba);
+            novaAba.getTabPane().getSelectionModel().select(novaAba);
+            novaAba.getContent().requestFocus();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    void newRule() {
+        try {
+            _tabPane.toFront();
+            FXMLLoader loader = new FXMLLoader(LoginStartAplication.class.getResource("views/rules/new-rule-view.fxml"));
+            Node content = loader.load();
+
+            Tab novaAba = new Tab("Nova Norma");
+            novaAba.setContent(content);
+            _tabPane.getTabs().add(novaAba);
+            novaAba.getTabPane().getSelectionModel().select(novaAba);
+            novaAba.getContent().requestFocus();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    void editRule() {
+        try {
+            _tabPane.toFront();
+            FXMLLoader loader = new FXMLLoader(LoginStartAplication.class.getResource("views/rules/edit-rule-view.fxml"));
+            Node content = loader.load();
+
+            Tab novaAba = new Tab("Editar Norma");
+            novaAba.setContent(content);
+            _tabPane.getTabs().add(novaAba);
+            novaAba.getTabPane().getSelectionModel().select(novaAba);
+            novaAba.getContent().requestFocus();
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

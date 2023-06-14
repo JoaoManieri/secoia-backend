@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class ControllerCostumers extends ControllerSubMenu implements ModelSubMenu{
 
-    private TabPane _tabPane;
+    private final TabPane _tabPane;
 
     public ControllerCostumers(VBox vboxMainMenu, TabPane tabPane) {
         super(vboxMainMenu, tabPane);
@@ -34,27 +34,25 @@ public class ControllerCostumers extends ControllerSubMenu implements ModelSubMe
         newOrder.setId("newCostummer_button");
         newOrder.setAlignment(Pos.BASELINE_LEFT);
         newOrder.setOnAction(e -> clickNewCostumer());
-        newOrder.setPrefHeight(40.0);
-        newOrder.setPrefWidth(260.0);
-        newOrder.getStylesheets().add(style);
-        newOrder.setTextFill(Color.WHITE);
-        newOrder.setPadding(new Insets(0, 0, 0, 80.0));
-        newOrder.setFont(new Font(14.0));
-        arrayButtons.add(newOrder);
+        buttonComplements(newOrder);
 
         Button editOrder = new Button(" - Editar ");
-        editOrder.setId("editOrder_button");
+        editOrder.setId("editCostumer_button");
         editOrder.setAlignment(Pos.BASELINE_LEFT);
-        editOrder.setOnAction(e -> clickEditOrder());
-        editOrder.setPrefHeight(40.0);
-        editOrder.setPrefWidth(260.0);
-        editOrder.getStylesheets().add(style);
-        editOrder.setTextFill(Color.WHITE);
-        editOrder.setPadding(new Insets(0, 0, 0, 80.0));
-        editOrder.setFont(new Font(14.0));
-        arrayButtons.add(editOrder);
+        editOrder.setOnAction(e -> editCostumer());
+        buttonComplements(editOrder);
 
         setSubSession(relativeIndex,arrayButtons,StatusSubMenu.subsessionCostumersIsOpen);
+    }
+
+    private void buttonComplements(Button button) {
+        button.setPrefHeight(40.0);
+        button.setPrefWidth(260.0);
+        button.getStylesheets().add(style);
+        button.setTextFill(Color.WHITE);
+        button.setPadding(new Insets(0, 0, 0, 80.0));
+        button.setFont(new Font(14.0));
+        arrayButtons.add(button);
     }
 
     public void changeStatus() {
@@ -69,11 +67,10 @@ public class ControllerCostumers extends ControllerSubMenu implements ModelSubMe
     protected void clickNewCostumer() {
         try {
             _tabPane.toFront();
-            FXMLLoader loader = new FXMLLoader(LoginStartAplication.class.getResource("costumers/new-costumer-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(LoginStartAplication.class.getResource("views/costumers/new-costumer-view.fxml"));
             Node content = loader.load();
 
-            Tab novaAba = new Tab("Nova Aba");
-            novaAba.setClosable(true);
+            Tab novaAba = new Tab("Novo Cliente");
             novaAba.setContent(content);
             _tabPane.getTabs().add(novaAba);
             novaAba.getTabPane().getSelectionModel().select(novaAba);
@@ -83,4 +80,23 @@ public class ControllerCostumers extends ControllerSubMenu implements ModelSubMe
             e.printStackTrace();
         }
     }
+
+    @FXML
+    protected void editCostumer() {
+        try {
+            _tabPane.toFront();
+            FXMLLoader loader = new FXMLLoader(LoginStartAplication.class.getResource("views/costumers/edit-costumer-view.fxml"));
+            Node content = loader.load();
+
+            Tab novaAba = new Tab("Editar cliente");
+            novaAba.setContent(content);
+            _tabPane.getTabs().add(novaAba);
+            novaAba.getTabPane().getSelectionModel().select(novaAba);
+            novaAba.getContent().requestFocus();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

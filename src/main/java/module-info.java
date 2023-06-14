@@ -7,10 +7,14 @@ module com.manieri.projetosequoia {
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
     requires com.fasterxml.jackson.databind;
+    requires annotations;
 
     exports com.manieri.projetosequoia;
     exports com.manieri.projetosequoia.ui.mainmenu;
     exports com.manieri.projetosequoia.ui.costumers;
+    exports com.manieri.projetosequoia.ui.rules;
+    exports com.manieri.projetosequoia.ui.order;
+
     exports com.manieri.projetosequoia.model;
 
 
@@ -20,5 +24,7 @@ module com.manieri.projetosequoia {
     opens com.manieri.projetosequoia to javafx.fxml;
     opens com.manieri.projetosequoia.ui.mainmenu to javafx.fxml;
     opens com.manieri.projetosequoia.ui.costumers to javafx.fxml;
+    opens com.manieri.projetosequoia.ui.rules to javafx.fxml;
+    opens com.manieri.projetosequoia.ui.order to javafx.fxml;
 
 }

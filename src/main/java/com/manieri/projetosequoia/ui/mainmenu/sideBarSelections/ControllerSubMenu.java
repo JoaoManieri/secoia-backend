@@ -67,31 +67,4 @@ public class ControllerSubMenu extends MainMenuController {
 
         finalIndex = 0;
     }
-
-    @FXML
-    protected void clickNewOrder() {
-        System.out.println("New order");
-    }
-
-    @FXML
-    void clickEditOrder() {
-        System.out.println("Edit order");
-    }
-
-
-
-//    @FXML
-//    void clickNewCostumer() {
-//        try {
-//            FXMLLoader loader = new FXMLLoader(LoginStartAplication.class.getResource("main-menu-view.fxml"));
-//            Node conteudo = loader.load();
-//
-//            Tab novaAba = new Tab("Nova Aba");
-//            novaAba.setContent(conteudo);
-//            MainMenuController.tabPane.getTabs().add(novaAba);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
 }

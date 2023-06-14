@@ -1,14 +1,19 @@
 package com.manieri.projetosequoia.ui.costumers;
 
+import com.manieri.projetosequoia.database.DAO.AdressDao;
+import com.manieri.projetosequoia.database.DAO.CostumerDAO;
+import com.manieri.projetosequoia.model.CostumerAdress;
 import com.manieri.projetosequoia.model.Empresa;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class NewCostumerController {
+import java.sql.SQLException;
 
+public class NewCostumerController {
 
     static Stage stage;
 
@@ -68,7 +73,19 @@ public class NewCostumerController {
         uf_textField.setText(empresa.getUf());
         cep_textField.setText(empresa.getCep());
 
-        //status_comboBox.setPlaceholder(empresa.getStatus());
+    }
+
+    @FXML
+    protected void saveData() throws SQLException {
+
+        CostumerAdress adress = new CostumerAdress(
+                rua_textField.getText(),numero_textField.getText(),
+                complemento_textField.getText(),bairro_textField.getText(),
+                cidade_textField.getText(),uf_textField.getText(),cep_textField.getText()
+        );
+
+        Boolean sucess = new AdressDao().setAdress(adress);
+        System.out.println(sucess);
 
     }
 }
