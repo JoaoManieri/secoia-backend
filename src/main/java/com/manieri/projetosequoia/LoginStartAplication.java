@@ -33,8 +33,9 @@ LoginStartAplication extends Application {
         stage.setScene(scene);
         stage.show();
 
+
         try{
-            controller.clicLogin();
+            //controller.clicLogin();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
