@@ -8,9 +8,7 @@ public class DataBaseRepository {
     private final String user = "postgres";
     private final String password = "MANIeri281298";
 
-    public String getJdbcURL() {
-        return jdbcURL;
-    }
+    public String getJdbcURL() {return jdbcURL;}
     public String getPassword() {
         return password;
     }

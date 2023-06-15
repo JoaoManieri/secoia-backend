@@ -35,7 +35,7 @@ LoginStartAplication extends Application {
 
 
         try{
-            //controller.clicLogin();
+            controller.clicLogin();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
