@@ -8,7 +8,6 @@ module com.manieri.projetosequoia {
     requires java.sql;
     requires com.fasterxml.jackson.databind;
     requires annotations;
-    requires org.apache.pdfbox;
 
     exports com.manieri.projetosequoia;
     exports com.manieri.projetosequoia.ui.mainmenu;
