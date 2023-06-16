@@ -28,7 +28,7 @@
                 </Pane>
                 <Button fx:id="button_orcaments" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#clickOrders" prefHeight="63.0" prefWidth="260.0" stylesheets="@css/fullpackstyling.css" text="Orçamentos" textFill="WHITE">
                     <graphic>
-                        <FontAwesomeIconView fill="WHITE" glyphName="FILE" size="20.0" />
+                        <FontAwesomeIconView fill="WHITE" glyphName="FILE" size="20.0" text="" />
                     </graphic>
                     <padding>
                         <Insets left="50.0" />
