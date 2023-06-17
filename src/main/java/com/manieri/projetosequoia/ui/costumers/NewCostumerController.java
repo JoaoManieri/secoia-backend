@@ -1,17 +1,24 @@
 package com.manieri.projetosequoia.ui.costumers;
 
+import com.manieri.projetosequoia.LoginStartAplication;
 import com.manieri.projetosequoia.database.DAO.AdressDao;
 import com.manieri.projetosequoia.database.DAO.CostumerDAO;
 import com.manieri.projetosequoia.model.CostumerAdress;
 import com.manieri.projetosequoia.model.Empresa;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class NewCostumerController {
 
@@ -57,12 +64,18 @@ public class NewCostumerController {
     private ComboBox<?> status_comboBox;
 
     @FXML
+    private VBox vbox;
+
+    private List<String> lista = new ArrayList<>();
+
+    @FXML
     protected void findCNPJ() {
 
         HTTPRequestCNPJ request = new HTTPRequestCNPJ();
         Empresa empresa = request.getInfo(cnpj_textField.getText());
         realName_extField.setText(empresa.getNome());
         atuationField_textField.setText(empresa.getAtividade_principal().get(0).getText());
+        fantasyName_textField.setText(empresa.getFantasia());
 
         email_textField.setText(empresa.getEmail());
 
@@ -86,6 +99,18 @@ public class NewCostumerController {
 
         Boolean sucess = new AdressDao().setAdress(adress);
         System.out.println(sucess);
+
+    }
+
+    @FXML
+    protected void newContatic() throws IOException {
+
+        System.out.println("Chamda");
+        FXMLLoader fxmlLoader = new FXMLLoader(LoginStartAplication.class.getResource("views/costumers/new-contact-item.fxml"));
+        Node content = fxmlLoader.load();
+        vbox.getChildren().add(6, content);
+
+
 
     }
 }
