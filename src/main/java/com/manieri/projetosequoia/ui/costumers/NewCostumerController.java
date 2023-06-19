@@ -7,6 +7,7 @@ import com.manieri.projetosequoia.model.CostumerAdress;
 import com.manieri.projetosequoia.model.Empresa;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -16,13 +17,26 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class NewCostumerController {
+public class NewCostumerController implements Initializable {
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            newContatic();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     static Stage stage;
+
+    static ArrayList<ContactController> listController = new ArrayList<>();
 
     @FXML
     private TextField atuationField_textField;
@@ -66,8 +80,6 @@ public class NewCostumerController {
     @FXML
     private VBox vbox;
 
-    private List<String> lista = new ArrayList<>();
-
     @FXML
     protected void findCNPJ() {
 
@@ -91,26 +103,30 @@ public class NewCostumerController {
     @FXML
     protected void saveData() throws SQLException {
 
-        CostumerAdress adress = new CostumerAdress(
-                rua_textField.getText(),numero_textField.getText(),
-                complemento_textField.getText(),bairro_textField.getText(),
-                cidade_textField.getText(),uf_textField.getText(),cep_textField.getText()
-        );
-
-        Boolean sucess = new AdressDao().setAdress(adress);
-        System.out.println(sucess);
+        for (ContactController item : listController) {
+            System.out.println(item.getName_textField().getText());
+        }
+//        CostumerAdress adress = new CostumerAdress(
+//                rua_textField.getText(), numero_textField.getText(),
+//                complemento_textField.getText(), bairro_textField.getText(),
+//                cidade_textField.getText(), uf_textField.getText(), cep_textField.getText()
+//        );
+//
+//        Boolean sucess = new AdressDao().setAdress(adress);
+//        System.out.println(sucess);
 
     }
 
     @FXML
     protected void newContatic() throws IOException {
-
-        System.out.println("Chamda");
+        
         FXMLLoader fxmlLoader = new FXMLLoader(LoginStartAplication.class.getResource("views/costumers/new-contact-item.fxml"));
         Node content = fxmlLoader.load();
+
+        ContactController._vbox = this.vbox;
+
         vbox.getChildren().add(6, content);
 
-
-
     }
+
 }
