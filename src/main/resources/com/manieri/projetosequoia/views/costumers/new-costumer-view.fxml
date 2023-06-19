@@ -69,28 +69,6 @@
                </padding>
             </AnchorPane>
             <Separator maxWidth="900.0" prefWidth="200.0" />
-            <AnchorPane maxWidth="900.0" style="-fx-background-color: #E0E0E0; -fx-background-radius: 15;">
-               <children>
-                  <Label layoutX="12.0" layoutY="19.0" text="Nome" textFill="#0250a6" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
-                  <TextField layoutX="66.0" layoutY="16.0" prefHeight="25.0" prefWidth="350.0" AnchorPane.leftAnchor="65.0" AnchorPane.topAnchor="15.0" />
-                  <Label layoutX="425.0" layoutY="20.0" text="Cargo" textFill="#0250a6" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="20.0" />
-                  <TextField layoutX="464.0" layoutY="16.0" prefHeight="25.0" prefWidth="167.0" AnchorPane.leftAnchor="465.0" AnchorPane.topAnchor="15.0" />
-                  <Label layoutX="642.0" layoutY="20.0" text="Status" textFill="#0250a6" AnchorPane.leftAnchor="640.0" AnchorPane.topAnchor="20.0" />
-                  <ComboBox fx:id="status_comboBox1" layoutX="683.0" layoutY="15.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #0250A6;" AnchorPane.leftAnchor="685.0" AnchorPane.topAnchor="15.0" />
-                  <Label layoutX="20.0" layoutY="50.0" text="Telefone" textFill="#0250a6" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="55.0" />
-                  <TextField layoutX="80.0" layoutY="51.0" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="50.0" />
-                  <Label layoutX="240.0" layoutY="55.0" text="Celular" textFill="#0250a6" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="55.0" />
-                  <Label layoutX="18.0" layoutY="92.0" text="e-mail" textFill="#0250a6" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="90.0">
-                     <padding>
-                        <Insets bottom="16.0" />
-                     </padding>
-                  </Label>
-                  <TextField layoutX="66.0" layoutY="90.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="85.0" />
-                  <Label layoutX="447.0" layoutY="55.0" prefHeight="15.0" prefWidth="37.0" text="Celular" textFill="#0250a6" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="55.0" />
-                  <TextField layoutX="281.0" layoutY="51.0" AnchorPane.leftAnchor="285.0" AnchorPane.topAnchor="50.0" />
-                  <TextField layoutX="491.0" layoutY="51.0" AnchorPane.leftAnchor="490.0" AnchorPane.topAnchor="50.0" />
-               </children>
-            </AnchorPane>
             <Button mnemonicParsing="false" onAction="#newContatic" style="-fx-background-color: #0250A6 #0250A6;" text="Novo Contato" textFill="WHITE" />
             <Separator maxWidth="900.0" prefWidth="200.0" />
 
