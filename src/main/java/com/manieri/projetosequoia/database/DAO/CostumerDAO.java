@@ -4,6 +4,7 @@ import com.manieri.projetosequoia.database.DataBaseRepository;
 import com.manieri.projetosequoia.model.Costumer;
 
 import java.sql.*;
+import java.time.temporal.TemporalQueries;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,10 +13,13 @@ public class CostumerDAO {
     public boolean setCostumer(Costumer costumer) throws SQLException {
         DataBaseRepository db = new DataBaseRepository();
 
+        int generatedId = 0;
+
         try (Connection conn = DriverManager.getConnection(db.getJdbcURL(), db.getUser(), db.getPassword())) {
+
             String query = "INSERT INTO costumers (fantasy_name, real_name, cnpj, simples_nacional_ativo, " +
                     "registration_year, order_request, company_status, atuation_field, competitive_factor) " +
-                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id";
 
             PreparedStatement statement = conn.prepareStatement(query);
 
@@ -29,10 +33,26 @@ public class CostumerDAO {
             statement.setString(8, costumer.getAtuationField());
             statement.setString(9, costumer.getCompetitiveFactor());
 
-            statement.executeUpdate();
 
+            statement.execute(statement.toString(), Statement.RETURN_GENERATED_KEYS);
+
+
+            ResultSet generatedKeys = statement.getGeneratedKeys();
+            if (generatedKeys.next()) {
+                generatedId = generatedKeys.getInt(1);
+                System.out.println("ID gerado: " + generatedId);
+            } else {
+                System.out.println("Falha ao obter o ID gerado.");
+            }
+
+
+            statement.close();
+            conn.close();
+
+            Boolean sucess = new AdressDao().setAdress(costumer.getCostumerAdresses(), generatedId);
 
             System.out.println("Cliente inserido com sucesso.");
+
             return true;
         } catch (SQLException e) {
             System.err.println("Erro ao inserir cliente: " + e.getMessage());
@@ -78,6 +98,13 @@ public class CostumerDAO {
             }
         }
         return listOfNames;
+    }
+
+    public void getAllInfoCustumer() {
+//        SELECT * FROM public.costumers c
+//        INNER JOIN public.costumer_address ca ON c.id = ca.costomer_id
+//        INNER JOIN public.costumer_contacts cc ON c.id = cc.costumer_id;
+
     }
 
 

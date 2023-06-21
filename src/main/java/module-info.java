@@ -8,6 +8,7 @@ module com.manieri.projetosequoia {
     requires java.sql;
     requires com.fasterxml.jackson.databind;
     requires annotations;
+    requires de.jensd.fx.glyphs.fontawesome;
 
     exports com.manieri.projetosequoia;
     exports com.manieri.projetosequoia.ui.mainmenu;

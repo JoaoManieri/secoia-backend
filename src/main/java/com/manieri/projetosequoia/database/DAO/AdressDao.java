@@ -8,10 +8,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class AdressDao {
 
-    public Boolean setAdress(CostumerAdress adress) throws SQLException {
+    public Boolean setAdress(ArrayList<CostumerAdress> adressesList, int costumerId) throws SQLException {
         DataBaseRepository db = new DataBaseRepository();
 
         PreparedStatement pstmt = null;
@@ -22,21 +23,28 @@ public class AdressDao {
                 System.exit(0);
             }
 
-            String insertQuery = "INSERT INTO CostumerAddress (street, number, complement, neighborhood, city, state, CEP) " +
-                    "VALUES (?, ?, ?, ?, ?, ?, ?)";
+            for(CostumerAdress adress : adressesList){
 
-            pstmt = conn.prepareStatement(insertQuery);
-            pstmt.setString(1, adress.getStreet());
-            pstmt.setString(2, adress.getNumber());
-            pstmt.setString(3, adress.getComplement());
-            pstmt.setString(4, adress.getNeighborhood());
-            pstmt.setString(5, adress.getCity());
-            pstmt.setString(6, adress.getState());
-            pstmt.setString(7, adress.getCEP());
+                String insertQuery = "INSERT INTO public.costumer_address(street, \"number\", complement, neighborhood, city, state, cep, costomer_id) " +
+                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
 
-            pstmt.executeUpdate();
+
+                pstmt = conn.prepareStatement(insertQuery);
+                pstmt.setString(1, adress.getStreet());
+                pstmt.setString(2, adress.getNumber());
+                pstmt.setString(3, adress.getComplement());
+                pstmt.setString(4, adress.getNeighborhood());
+                pstmt.setString(5, adress.getCity());
+                pstmt.setString(6, adress.getState());
+                pstmt.setString(7, adress.getCEP());
+                pstmt.setInt(8, costumerId);
+
+                pstmt.executeUpdate();
+
+            }
 
             return true;
+
         } finally {
             if (pstmt != null) {
                 pstmt.close();

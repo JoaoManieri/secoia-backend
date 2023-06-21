@@ -1,5 +1,7 @@
 package com.manieri.projetosequoia.model;
 
+import javafx.scene.control.TextField;
+
 public class CostumerContacts {
 
     private String name;

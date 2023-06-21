@@ -16,25 +16,29 @@
    <ScrollPane fitToHeight="true" fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
       <VBox fx:id="vbox" alignment="TOP_CENTER" prefHeight="651.0" prefWidth="820.0" spacing="10" style="-fx-padding: 10px;">
          <children>
-            <Text fill="#0250a6" layoutX="29.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro Clientes" wrappingWidth="148.5078125">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Text>
+            <AnchorPane>
+               <children>
+                  <Text fill="#0250a6" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro Clientes" wrappingWidth="148.5078125" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="8.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
             <Separator maxWidth="900.0" prefWidth="200.0" style="-fx-background-color: #0250A6;" />
             <AnchorPane maxWidth="900.0" style="-fx-background-color: #E0E0E0; -fx-background-radius: 15;">
                <TextField fx:id="cnpj_textField" layoutX="63.0" layoutY="15.0" prefHeight="25.0" prefWidth="212.0" AnchorPane.leftAnchor="65.0" AnchorPane.topAnchor="15.0" />
                <Button layoutX="286.0" layoutY="15.0" mnemonicParsing="false" onAction="#findCNPJ" style="-fx-background-color: #0250A6;" text="Procurar" textFill="WHITE" AnchorPane.leftAnchor="285.0" AnchorPane.topAnchor="15.0" />
                <TextField fx:id="fantasyName_textField" layoutX="100.0" layoutY="50.0" prefHeight="25.0" prefWidth="236.0" AnchorPane.leftAnchor="105.0" AnchorPane.topAnchor="50.0" />
                <TextField fx:id="realName_extField" layoutX="419.0" layoutY="50.0" prefHeight="25.0" prefWidth="374.0" AnchorPane.leftAnchor="420.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0" />
-               <ComboBox fx:id="status_comboBox" layoutX="120.0" layoutY="86.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #0250A6;" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="85.0" />
-               <TextField fx:id="atuationField_textField" layoutX="284.0" layoutY="86.0" prefHeight="25.0" prefWidth="499.0" AnchorPane.leftAnchor="285.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="85.0" />
-               <ComboBox layoutX="120.0" layoutY="121.0" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #0250A6;" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="120.0" />
+               <ComboBox fx:id="status_comboBox" layoutX="120.0" layoutY="86.0" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #0250A6; -fx-text-fill: #FFFFFF;" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="85.0" />
+               <TextField fx:id="atuationField_textField" layoutX="327.0" layoutY="86.0" prefHeight="25.0" prefWidth="531.0" AnchorPane.leftAnchor="327.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="85.0" />
+               <ComboBox fx:id="orderRequest_comboBox" layoutX="120.0" layoutY="121.0" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #0250A6; -fx-text-fill: #FFFFFF;" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="120.0" />
                <TextField fx:id="email_textField" layoutX="273.0" layoutY="121.0" prefHeight="25.0" prefWidth="520.0" AnchorPane.leftAnchor="275.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="120.0" />
                <Label layoutX="347.0" layoutY="54.0" text="Razão social" textFill="#0250a6" AnchorPane.leftAnchor="345.0" AnchorPane.topAnchor="55.0" />
                <Label layoutX="14.0" layoutY="54.0" text="Nome Fantasia" textFill="#0250a6" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="55.0" />
                <Label layoutX="14.0" layoutY="90.0" text="Status da empresa" textFill="#0250a6" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="90.0" />
-               <Label layoutX="189.0" layoutY="90.0" text="Area de atuação" textFill="#0250a6" AnchorPane.leftAnchor="190.0" AnchorPane.topAnchor="90.0" />
+               <Label layoutX="189.0" layoutY="90.0" text="Area de atuação" textFill="#0250a6" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="90.0" />
                <Label layoutX="14.0" layoutY="125.0" text="Pedido de compra" textFill="#0250a6" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="125.0" />
                <Label layoutX="232.0" layoutY="125.0" text="e-mail" textFill="#0250a6" AnchorPane.leftAnchor="230.0" AnchorPane.topAnchor="125.0" />
                <Label layoutX="24.0" layoutY="29.0" text="CNPJ" textFill="#0250a6" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
