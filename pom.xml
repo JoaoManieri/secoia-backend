@@ -57,16 +57,17 @@
             <artifactId>fontawesomefx-commons</artifactId>
             <version>9.1.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-fxml -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>20.0.1</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>20.0.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-fxml</artifactId>
             <version>20.0.1</version>
         </dependency>
 

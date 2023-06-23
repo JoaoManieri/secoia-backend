@@ -16,7 +16,7 @@ import javafx.scene.text.Font;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ControllerRules extends ControllerSubMenu implements ModelSubMenu{
+public class ControllerRules extends ControllerSubMenu implements ModelSubMenu {
 
     ArrayList<Button> arrayButtons = new ArrayList<Button>();
 
@@ -48,7 +48,13 @@ public class ControllerRules extends ControllerSubMenu implements ModelSubMenu{
         button3.setOnAction(e -> editRule());
         button(button3);
 
-        setSubSession(relativeIndex,arrayButtons,StatusSubMenu.subsessionRulesIsOpen);
+        Button button4 = new Button(" - Teste Davi");
+        button4.setId("testeDavi_button");
+        // button4.setAlignment(Pos.BASELINE_LEFT);
+        button4.setOnAction(e -> testeDavi());
+        button(button4);
+
+        setSubSession(relativeIndex, arrayButtons, StatusSubMenu.subsessionRulesIsOpen);
     }
 
     private void button(Button button) {
@@ -63,7 +69,7 @@ public class ControllerRules extends ControllerSubMenu implements ModelSubMenu{
 
     @Override
     public void changeStatus() {
-        if(!StatusSubMenu.subsessionRulesIsOpen){
+        if (!StatusSubMenu.subsessionRulesIsOpen) {
             StatusSubMenu.subsessionRulesIsOpen = true;
         } else {
             StatusSubMenu.subsessionRulesIsOpen = false;
@@ -78,6 +84,8 @@ public class ControllerRules extends ControllerSubMenu implements ModelSubMenu{
             Node content = loader.load();
 
             Tab novaAba = new Tab("Nova Especificação");
+            novaAba.setStyle("-fx-background-color: white;"); //muda a cor dá tab
+
             novaAba.setContent(content);
             _tabPane.getTabs().add(novaAba);
             novaAba.getTabPane().getSelectionModel().select(novaAba);
@@ -87,6 +95,7 @@ public class ControllerRules extends ControllerSubMenu implements ModelSubMenu{
             e.printStackTrace();
         }
     }
+
     @FXML
     void newRule() {
         try {
@@ -95,6 +104,7 @@ public class ControllerRules extends ControllerSubMenu implements ModelSubMenu{
             Node content = loader.load();
 
             Tab novaAba = new Tab("Nova Norma");
+            novaAba.setStyle("-fx-background-color: white;"); //muda a cor dá tab
             novaAba.setContent(content);
             _tabPane.getTabs().add(novaAba);
             novaAba.getTabPane().getSelectionModel().select(novaAba);
@@ -104,6 +114,7 @@ public class ControllerRules extends ControllerSubMenu implements ModelSubMenu{
             e.printStackTrace();
         }
     }
+
     @FXML
     void editRule() {
         try {
@@ -112,6 +123,7 @@ public class ControllerRules extends ControllerSubMenu implements ModelSubMenu{
             Node content = loader.load();
 
             Tab novaAba = new Tab("Editar Norma");
+            novaAba.setStyle("-fx-background-color: white;"); //muda a cor dá tab
             novaAba.setContent(content);
             _tabPane.getTabs().add(novaAba);
             novaAba.getTabPane().getSelectionModel().select(novaAba);
@@ -121,4 +133,24 @@ public class ControllerRules extends ControllerSubMenu implements ModelSubMenu{
             e.printStackTrace();
         }
     }
+
+    @FXML
+    void testeDavi() {
+        try {
+
+            _tabPane.toFront();
+            FXMLLoader loader = new FXMLLoader(LoginStartAplication.class.getResource("views/rules/davi-teste.fxml"));
+            Node content = loader.load();
+
+            Tab novaAba = new Tab("Davi Teste");
+            novaAba.setContent(content);
+            _tabPane.getTabs().add(novaAba);
+            novaAba.getTabPane().getSelectionModel().select(novaAba);
+            novaAba.getContent().requestFocus();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

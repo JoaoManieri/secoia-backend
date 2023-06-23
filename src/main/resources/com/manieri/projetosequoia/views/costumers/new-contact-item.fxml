@@ -7,6 +7,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="root_anchorPane" maxWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.manieri.projetosequoia.ui.costumers.ContactController">
    <children>
@@ -30,9 +31,12 @@
             <Label prefHeight="17.0" prefWidth="61.0" text="WhatsApp" textFill="#0250a6" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="55.0" />
             <TextField fx:id="cell_textField" AnchorPane.leftAnchor="285.0" AnchorPane.topAnchor="50.0" />
             <TextField fx:id="zap_textField" AnchorPane.leftAnchor="510.0" AnchorPane.topAnchor="50.0" />
-            <Button layoutX="817.0" layoutY="15.0" mnemonicParsing="false" onAction="#erasedContact" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0">
+            <Button layoutX="817.0" layoutY="15.0" mnemonicParsing="false" onAction="#erasedContact" style="-fx-background-color: #E0E0E0;" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0">
                <graphic>
-                  <FontAwesomeIconView glyphName="TRASH" />
+                  <FontAwesomeIconView fill="#0250a6" glyphName="TRASH" text="">
+                     <font>
+                        <Font size="16.0" />
+                     </font></FontAwesomeIconView>
                </graphic>
             </Button>
             <Label fx:id="indexMark" layoutX="752.0" layoutY="55.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="55.0" />

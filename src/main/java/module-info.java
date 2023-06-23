@@ -9,6 +9,7 @@ module com.manieri.projetosequoia {
     requires com.fasterxml.jackson.databind;
     requires annotations;
     requires de.jensd.fx.glyphs.fontawesome;
+    requires javafx.graphics;
 
     exports com.manieri.projetosequoia;
     exports com.manieri.projetosequoia.ui.mainmenu;
