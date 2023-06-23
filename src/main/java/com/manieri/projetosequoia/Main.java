@@ -1,29 +1,34 @@
 package com.manieri.projetosequoia;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
-public class Main extends Application {
+public class Main {
     public static void main(String[] args) {
-        launch(args);
-    }
-
-    @Override
-    public void start(Stage primaryStage) throws IOException {
-
-        FXMLLoader fxmlLoader = new FXMLLoader(LoginStartAplication.class.getResource("views/costumers/new-costumer-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        primaryStage.setTitle("S");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+       try {
+           String certo = "deu certo";
+           System.out.println(20/0);
+       }catch (Exception error){
+           String certo = "deu errado";
+           System.out.println("tá errado");
+       }finally {
+           System.out.println("sei la");
+       }
 
 
 
     }
+
+
 }
 
+class Pessoa {
+    int idade;
+    String nome;
+
+    public Pessoa(int idade, String nome) {
+        this.idade = idade;
+        this.nome = nome;
+    }
+}

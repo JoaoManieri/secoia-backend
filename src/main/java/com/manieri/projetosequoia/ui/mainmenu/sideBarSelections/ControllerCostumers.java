@@ -70,7 +70,11 @@ public class ControllerCostumers extends ControllerSubMenu implements ModelSubMe
             FXMLLoader loader = new FXMLLoader(LoginStartAplication.class.getResource("views/costumers/new-costumer-view.fxml"));
             Node content = loader.load();
 
+
+
             Tab novaAba = new Tab("Novo Cliente");
+
+            novaAba.setStyle("-fx-background-color: white;"); //muda a cor dá aba
             novaAba.setContent(content);
             _tabPane.getTabs().add(novaAba);
             novaAba.getTabPane().getSelectionModel().select(novaAba);
@@ -89,6 +93,7 @@ public class ControllerCostumers extends ControllerSubMenu implements ModelSubMe
             Node content = loader.load();
 
             Tab novaAba = new Tab("Editar cliente");
+            novaAba.setStyle("-fx-background-color: white;"); //muda a cor dá tab
             novaAba.setContent(content);
             _tabPane.getTabs().add(novaAba);
             novaAba.getTabPane().getSelectionModel().select(novaAba);

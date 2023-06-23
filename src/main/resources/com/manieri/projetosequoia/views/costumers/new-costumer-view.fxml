@@ -14,7 +14,7 @@
 
 <AnchorPane prefHeight="800.0" prefWidth="900.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.manieri.projetosequoia.ui.costumers.NewCostumerController">
    <ScrollPane fitToHeight="true" fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
-      <VBox fx:id="vbox" alignment="TOP_CENTER" prefHeight="651.0" prefWidth="820.0" spacing="10" style="-fx-padding: 10px;">
+      <VBox fx:id="vbox" alignment="TOP_CENTER" prefHeight="651.0" prefWidth="820.0" spacing="10" style="-fx-padding: 10px; -fx-background-color: #ffffff;">
          <children>
             <AnchorPane>
                <children>

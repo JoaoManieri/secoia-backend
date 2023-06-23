@@ -70,6 +70,7 @@ public class ControllerOrders extends ControllerSubMenu implements ModelSubMenu 
             Node content = loader.load();
 
             Tab novaAba = new Tab("Novo Orçamento");
+            novaAba.setStyle("-fx-background-color: white;"); //muda a cor dá tab
             novaAba.setContent(content);
             _tabPane.getTabs().add(novaAba);
             novaAba.getTabPane().getSelectionModel().select(novaAba);
@@ -87,6 +88,7 @@ public class ControllerOrders extends ControllerSubMenu implements ModelSubMenu 
             Node content = loader.load();
 
             Tab novaAba = new Tab("Editar Orçamento");
+            novaAba.setStyle("-fx-background-color: white;"); //muda a cor dá tab
             novaAba.setContent(content);
             _tabPane.getTabs().add(novaAba);
             novaAba.getTabPane().getSelectionModel().select(novaAba);
