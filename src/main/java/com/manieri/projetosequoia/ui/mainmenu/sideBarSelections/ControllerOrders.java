@@ -28,18 +28,21 @@ public class ControllerOrders extends ControllerSubMenu implements ModelSubMenu 
 
     @Override
     public void actionSubMenu(int relativeIndex){
+        if(!StatusSubMenu.subsessionOrderIsOpen){
 
-        Button newOrder = new Button(" - Novo orçamento");
-        newOrder.setId("newOrder_button");
-        newOrder.setAlignment(Pos.BASELINE_LEFT);
-        newOrder.setOnAction(e -> clickNewOrder());
-        buttonBuilder(newOrder);
+            Button newOrder = new Button(" - Novo orçamento");
+            newOrder.setId("newOrder_button");
+            newOrder.setAlignment(Pos.BASELINE_LEFT);
+            newOrder.setOnAction(e -> clickNewOrder());
+            buttonBuilder(newOrder);
 
-        Button editOrder = new Button(" - Editar orçamento");
-        editOrder.setId("editOrder_button");
-        editOrder.setAlignment(Pos.BASELINE_LEFT);
-        editOrder.setOnAction(e -> clickEditOrder());
-        buttonBuilder(editOrder);
+            Button editOrder = new Button(" - Editar orçamento");
+            editOrder.setId("editOrder_button");
+            editOrder.setAlignment(Pos.BASELINE_LEFT);
+            editOrder.setOnAction(e -> clickEditOrder());
+            buttonBuilder(editOrder);
+
+        }
 
         setSubSession(relativeIndex,arrayButtons,StatusSubMenu.subsessionOrderIsOpen);
     }

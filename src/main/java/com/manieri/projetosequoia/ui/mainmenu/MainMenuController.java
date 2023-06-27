@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 //import javafx.scene.web.WebView;
+import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
@@ -22,31 +23,47 @@ public class MainMenuController {
     @FXML
     private VBox mainMenu_vbox;
 
-    //@FXML
-   // private WebView  webView;
+    @FXML
+    private Button button_normas;
 
+    @FXML
+    private Button button_orcaments;
+
+    @FXML
+    private Button button_settings;
+
+    @FXML
+    private Button button_users;
+
+    @FXML
+    private VBox vbox_sideMenu;
 
     @FXML
     void clickOrders() {
-        ControllerOrders cm = new ControllerOrders(mainMenu_vbox, tabPaneMain);
+
+        int indice = vbox_sideMenu.getChildren().indexOf(button_orcaments);
+        ControllerOrders cm = new ControllerOrders(vbox_sideMenu, tabPaneMain);
         cm.changeStatus();
-        cm.actionSubMenu(2);
+        cm.actionSubMenu(indice+1);
 
     }
 
     @FXML
     void clickCostumers() {
-        ControllerCostumers cm = new ControllerCostumers(mainMenu_vbox, tabPaneMain);
+
+        int indice = vbox_sideMenu.getChildren().indexOf(button_users);
+        ControllerCostumers cm = new ControllerCostumers(vbox_sideMenu, tabPaneMain);
         cm.changeStatus();
-        cm.actionSubMenu(3);
+        cm.actionSubMenu(indice + 1);
 
     }
 
     @FXML
     void clickRules() {
-        ControllerRules cm = new ControllerRules(mainMenu_vbox, tabPaneMain);
+        int indice = vbox_sideMenu.getChildren().indexOf(button_normas);
+        ControllerRules cm = new ControllerRules(vbox_sideMenu, tabPaneMain);
         cm.changeStatus();
-        cm.actionSubMenu(4);
+        cm.actionSubMenu(indice + 1);
 
     }
 
