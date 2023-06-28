@@ -9,6 +9,7 @@ import com.manieri.projetosequoia.model.CostumerContacts;
 import com.manieri.projetosequoia.model.Empresa;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -227,6 +228,7 @@ public class NewCostumerController implements Initializable {
         // Define o texto formatado no campo de CNPJ
         cnpjField.setText(cnpj);
     }
+
 
 
 }

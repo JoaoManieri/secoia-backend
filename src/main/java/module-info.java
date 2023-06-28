@@ -11,6 +11,13 @@ module com.manieri.projetosequoia {
     requires de.jensd.fx.glyphs.fontawesome;
     requires javafx.graphics;
 
+
+    requires software.amazon.awssdk.auth;
+    requires software.amazon.awssdk.regions;
+    requires software.amazon.awssdk.services.s3;
+    requires software.amazon.awssdk.awscore;
+    requires java.desktop;
+
     exports com.manieri.projetosequoia;
     exports com.manieri.projetosequoia.ui.mainmenu;
     exports com.manieri.projetosequoia.ui.costumers;
