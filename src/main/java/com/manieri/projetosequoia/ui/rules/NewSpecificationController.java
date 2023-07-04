@@ -1,5 +1,6 @@
 package com.manieri.projetosequoia.ui.rules;
 
+import com.manieri.projetosequoia.files.FileType;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -44,7 +45,7 @@ public class NewSpecificationController {
         primaryStage.setTitle("Nova especificação!");
 
         FileChooser fileChooser = new FileChooser();
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Escolha um arquivo .pdf", FileType.PDF.getExtension()));
         file = fileChooser.showOpenDialog(primaryStage);
 
         if(file != null){

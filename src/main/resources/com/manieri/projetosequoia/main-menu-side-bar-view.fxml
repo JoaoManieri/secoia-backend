@@ -80,7 +80,7 @@
             </ScrollPane>
             </children>
         </VBox>
-        <TabPane fx:id="tabPaneMain" layoutX="494.0" layoutY="226.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/tabStyle.css" tabClosingPolicy="ALL_TABS" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="268.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="0.0" />
+        <TabPane fx:id="tabPaneMain" layoutX="494.0" layoutY="226.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/tabStyle.css" tabClosingPolicy="ALL_TABS" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="290.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="0.0" />
       <AnchorPane layoutX="293.0" prefHeight="673.0" prefWidth="687.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="290.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0" />
     </children>
 </AnchorPane>

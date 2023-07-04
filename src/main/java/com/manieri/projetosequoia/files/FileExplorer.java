@@ -6,6 +6,14 @@ import javafx.stage.Stage;
 
 public class FileExplorer extends Application {
 
+    private String hint;
+    private final FileType type ;
+
+    FileExplorer(String hint, FileType type){
+        this.hint = hint;
+        this.type = type;
+    }
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -22,7 +30,7 @@ public class FileExplorer extends Application {
         fileChooser.setTitle("Salvar Orcamento");
 
         // Definir o filtro de extensão do arquivo (opcional)
-        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Arquivos PDF (*.pdf)", "*.pdf");
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(hint, type.getExtension());
         fileChooser.getExtensionFilters().add(extFilter);
 
         // Exibir o diálogo de seleção de arquivo

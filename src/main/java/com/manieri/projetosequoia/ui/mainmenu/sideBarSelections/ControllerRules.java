@@ -48,9 +48,15 @@ public class ControllerRules extends ControllerSubMenu implements ModelSubMenu {
         button3.setOnAction(e -> editRule());
         button(button3);
 
+        Button newEntity = new Button(" - Nova Entidade");
+        newEntity.setId("editRule_button");
+        newEntity.setAlignment(Pos.BASELINE_LEFT);
+        newEntity.setOnAction(e -> newEntity());
+        button(newEntity);
+
         Button button4 = new Button(" - Teste Davi");
         button4.setId("testeDavi_button");
-        // button4.setAlignment(Pos.BASELINE_LEFT);
+        button4.setAlignment(Pos.BASELINE_LEFT);
         button4.setOnAction(e -> testeDavi());
         button(button4);
 
@@ -124,6 +130,24 @@ public class ControllerRules extends ControllerSubMenu implements ModelSubMenu {
 
             Tab novaAba = new Tab("Editar Norma");
             novaAba.setStyle("-fx-background-color: white;"); //muda a cor dá tab
+            novaAba.setContent(content);
+            _tabPane.getTabs().add(novaAba);
+            novaAba.getTabPane().getSelectionModel().select(novaAba);
+            novaAba.getContent().requestFocus();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    void newEntity(){
+        try {
+            _tabPane.toFront();
+            FXMLLoader loader = new FXMLLoader(LoginStartAplication.class.getResource("views/rules/new-entity-view.fxml"));
+            Node content = loader.load();
+
+            Tab novaAba = new Tab("Nova Entidade");
+            novaAba.setStyle("-fx-background-color: white;");
             novaAba.setContent(content);
             _tabPane.getTabs().add(novaAba);
             novaAba.getTabPane().getSelectionModel().select(novaAba);

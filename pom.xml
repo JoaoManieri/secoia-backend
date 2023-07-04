@@ -14,8 +14,6 @@
         <junit.version>5.9.2</junit.version>
     </properties>
 
-
-
     <dependencies>
 
         <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/s3 -->

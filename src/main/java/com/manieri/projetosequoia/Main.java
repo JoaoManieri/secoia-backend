@@ -18,11 +18,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(LoginStartAplication.class.getResource("/com/manieri/projetosequoia/views/costumers/edit-costumer-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(LoginStartAplication.class.getResource("/com/manieri/projetosequoia/views/rules/new-entity-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-
-
-        primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setTitle("Teste Main");
         primaryStage.setScene(scene);
         primaryStage.show();
