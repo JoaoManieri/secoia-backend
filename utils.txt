@@ -1,7 +1,0 @@
-main collor project:
-
-- #0250a6
-
-
-Access key ID         Secret access key
-AKIAYAEO6K2NOBOBYKUK  9U698WbLXSQOLQOs5WXmKgHICHhYRs5L6jrh8n5v
