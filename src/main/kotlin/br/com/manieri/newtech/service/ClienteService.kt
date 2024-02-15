@@ -5,6 +5,7 @@ import br.com.manieri.newtech.dto.NovoClienteForm
 import br.com.manieri.newtech.mapper.ClienteFormMapper
 import br.com.manieri.newtech.mapper.ClienteViewMapper
 import br.com.manieri.newtech.model.Cliente
+import br.com.manieri.newtech.model.StatusCliente
 import org.springframework.stereotype.Service
 import java.util.stream.Collectors
 
@@ -29,6 +30,11 @@ class ClienteService(
 
     fun cadastrar(dto: NovoClienteForm) {
         clientes = clientes.plus(clienteFormMapper.map(dto))
+    }
+
+    fun getStatus(status: Boolean) : StatusCliente {
+        return if (status) StatusCliente.ATIVO
+        else StatusCliente.INATIVO
     }
 
 }
