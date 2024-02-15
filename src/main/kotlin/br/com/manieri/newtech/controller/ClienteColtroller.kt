@@ -27,7 +27,7 @@ class ClienteColtroller (private val clienteService : ClienteService) {
     }
 
     @PostMapping
-    fun cadastrar(@RequestBody cliente : NovoClienteForm){
+    fun cadastrar(@RequestBody cliente : NovoClienteForm) {
         clienteService.cadastrar(cliente)
     }
 

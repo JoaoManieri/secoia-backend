@@ -5,19 +5,22 @@ data class Cliente (
         val nomeFantasia: String,
         val nomeReal: String,
         val cnpj: String,
-//        val simplesNacionalAtivo: Boolean,
-        val anoDeRegistro: String,
-//        val solicitacaoPedido: Boolean,
-//        val statusEmpresa: Boolean,
-//        val ramoDeAtividade: String,
-//        val fatorCompetitivo: String,
-        val dataDeCadastro: LocalDateTime = LocalDateTime.now(),
-        val usuraioCriador: Usuario,
-        val status : StatusCliente = StatusCliente.ATIVO
+        val simplesNacionalAtivo: Boolean,
+        val ramoDeAtividade: String,
 
+        val listaDeEnderecos: ArrayList<Endereco>,
+        val listaDeContatos: ArrayList<Contato>,
 
-//        val costumerAddresses: ArrayList<CostumerAddress>,
-//        val costumerContacts: ArrayList<CostumerContact>
+        val solicitacaoPedido: Boolean,
+        val statusEmpresa: Boolean,
+
+        val dataDeCadastro: LocalDateTime, // = LocalDateTime.now()
+        val usuarioCriador: Usuario,
+        val status : StatusCliente = StatusCliente.ATIVO,
+
+        val fatorCompetitivo: String?,
+        val gestorDaConta : Usuario?,
+        val analistaDaConta : Usuario?
 )
 
 
