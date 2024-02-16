@@ -9,19 +9,11 @@ data class NovoClienteForm(
     val cnpj: String,
     val simplesNacionalAtivo: Boolean,
     val ramoDeAtividade: String,
-
     val listaDeEnderecos: ArrayList<Endereco>,
     val listaDeContatos: ArrayList<Contato>,
-
-//    val solicitacaoPedido: Boolean, FALSE
-//    val statusEmpresa: Boolean, TRUE
-
-//    val dataDeCadastro: LocalDateTime = LocalDateTime.now(),
-    val usuarioCriadorId: Long, // Usuario,
-//    val status : StatusCliente = StatusCliente.ATIVO,
-
+    val usuarioCriadorId: Long,
     val fatorCompetitivo: String?,
-    val gestorDaContaUsuarioId: Long?, //Usuario?,
-    val analistaDaContaUsuarioId: Long?, //Usuario?
+    val gestorDaContaUsuarioId: Long?,
+    val analistaDaContaUsuarioId: Long?,
 )
 

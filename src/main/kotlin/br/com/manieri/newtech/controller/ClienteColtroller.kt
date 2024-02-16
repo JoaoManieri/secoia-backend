@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/cliente")
 class ClienteColtroller (private val clienteService : ClienteService) {
 
-
     @GetMapping
     fun listar() : List<ClienteView>{
         return clienteService.listar()
