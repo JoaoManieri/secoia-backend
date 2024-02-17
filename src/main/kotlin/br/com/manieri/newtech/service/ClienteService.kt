@@ -2,8 +2,10 @@ package br.com.manieri.newtech.service
 
 import br.com.manieri.newtech.dto.ClienteView
 import br.com.manieri.newtech.dto.NovoClienteForm
+import br.com.manieri.newtech.externo.receitaFederal.dto.ReceitaFederalView
 import br.com.manieri.newtech.mapper.ClienteFormMapper
 import br.com.manieri.newtech.mapper.ClienteViewMapper
+import br.com.manieri.newtech.externo.receitaFederal.mapper.ReceitaFederalViewMapper
 import br.com.manieri.newtech.model.Cliente
 import br.com.manieri.newtech.model.StatusCliente
 import org.springframework.stereotype.Service
@@ -13,7 +15,8 @@ import java.util.stream.Collectors
 class ClienteService(
     private var clientes: List<Cliente> = ArrayList(),
     private val clienteViewMapper: ClienteViewMapper,
-    private val clienteFormMapper: ClienteFormMapper
+    private val clienteFormMapper: ClienteFormMapper,
+    private val receitaFederalViewMapper: ReceitaFederalViewMapper
 ) {
     fun listar(): List<ClienteView> {
         return clientes.stream().map {
@@ -21,7 +24,7 @@ class ClienteService(
         }.collect(Collectors.toList())
     }
 
-    fun buscarPorCnpj(cnpj: String): ClienteView {
+    fun clientePorCnpj(cnpj: String): ClienteView {
         val cliente = clientes.stream().filter {
             t-> t.cnpj == cnpj
         }.findFirst().get()
