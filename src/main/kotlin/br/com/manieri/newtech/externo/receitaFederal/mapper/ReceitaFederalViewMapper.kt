@@ -21,7 +21,7 @@ class ReceitaFederalViewMapper : Mapper<ReceitaFederalEmpresaInfo, ReceitaFedera
             cep = t.cep,
             email = t.email,
             telefone = t.telefone,
-            atividade_principal = t.atividade_principal
+            atividadePrincipal = t.atividade_principal[0].text
         )
     }
 }

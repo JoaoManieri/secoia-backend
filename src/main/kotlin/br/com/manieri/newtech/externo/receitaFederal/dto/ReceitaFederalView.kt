@@ -1,7 +1,5 @@
 package br.com.manieri.newtech.externo.receitaFederal.dto
 
-import br.com.manieri.newtech.externo.receitaFederal.model.Atividade
-
 data class ReceitaFederalView (
 
     val nome: String,
@@ -16,5 +14,5 @@ data class ReceitaFederalView (
     val cep: String,
     val telefone: String,
     val email: String,
-    val atividade_principal: List<Atividade>
+    val atividadePrincipal: String
 )
