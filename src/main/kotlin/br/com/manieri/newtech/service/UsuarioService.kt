@@ -11,15 +11,8 @@ class UsuarioService(
     private var departamentoService: DepartamentoService
 ) {
 
-//    init {
-//        cadastrar(UsuarioForm("João", 0))
-//    }
-
     fun buscarPorUsuario(id: Long?): Usuario? {
-        println()
-        println("-----------------------------------------------------------[LOG] Chegou aqui!!!")
-        println()
-        return repository.getReferenceById(id!!)
+        return repository.getById(id!!)
     }
 
     fun cadastrar(usuario: UsuarioForm) {
