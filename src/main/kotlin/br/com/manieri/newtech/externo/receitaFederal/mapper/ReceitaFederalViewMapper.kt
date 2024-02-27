@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component
 @Component
 class ReceitaFederalViewMapper : Mapper<ReceitaFederalEmpresaInfo, ReceitaFederalView> {
     override fun map(t: ReceitaFederalEmpresaInfo): ReceitaFederalView {
+
         return ReceitaFederalView(
             nome = t.nome,
             fantasia = t.fantasia,
