@@ -9,5 +9,5 @@ import jakarta.persistence.Id
 data class Departamento(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
-    val nome : String
+    val nome : String = ""
 )

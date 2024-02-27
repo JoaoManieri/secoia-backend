@@ -3,6 +3,7 @@ package br.com.manieri.newtech.controller
 import br.com.manieri.newtech.dto.ClienteView
 import br.com.manieri.newtech.dto.NovoClienteForm
 import br.com.manieri.newtech.externo.receitaFederal.dto.ReceitaFederalView
+import br.com.manieri.newtech.model.Cliente
 import br.com.manieri.newtech.service.ClienteService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -21,7 +22,7 @@ class ClienteColtroller (private val clienteService : ClienteService) {
     }
 
     @GetMapping("/{cnpj}")
-    fun clientePorCNPJ(@PathVariable cnpj : String) : ClienteView{
+    fun clientePorCNPJ(@PathVariable cnpj : String) : Cliente{
         return clienteService.clientePorCnpj(cnpj)
     }
 

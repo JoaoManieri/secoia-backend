@@ -9,9 +9,9 @@ import jakarta.persistence.Id
 data class Contato (
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id : Long? = null,
-    val nome : String,
-    val cargo : String,
-    val telefone : String,
-    val celular : String,
-    val email : String
+    val nome : String = "",
+    val cargo : String = "",
+    val telefone : String = "",
+    val celular : String = "",
+    val email : String = ""
 )

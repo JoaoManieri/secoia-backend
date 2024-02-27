@@ -15,7 +15,6 @@ class ClienteFormMapper(
 ) : Mapper<NovoClienteForm, Cliente> {
     override fun map(t: NovoClienteForm): Cliente {
         return Cliente(
-            id = 0,
             nomeFantasia = t.nomeFantasia,
             nomeReal = t.nomeReal,
             cnpj = t.cnpj,
