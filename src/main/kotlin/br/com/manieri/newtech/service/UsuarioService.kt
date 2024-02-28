@@ -12,7 +12,7 @@ class UsuarioService(
 ) {
 
     fun buscarPorUsuario(id: Long?): Usuario? {
-        return repository.getById(id!!)
+        return repository.getReferenceById(id!!)
     }
 
     fun cadastrar(usuario: UsuarioForm) {

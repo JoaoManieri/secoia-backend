@@ -3,6 +3,7 @@ package br.com.manieri.newtech.mapper
 import br.com.manieri.newtech.dto.NovoClienteForm
 import br.com.manieri.newtech.model.Cliente
 import br.com.manieri.newtech.model.StatusCliente
+import br.com.manieri.newtech.model.Usuario
 import br.com.manieri.newtech.service.ClienteService
 import br.com.manieri.newtech.service.UsuarioService
 import org.springframework.stereotype.Component
@@ -27,9 +28,9 @@ class ClienteFormMapper(
             ramoDeAtividade = t.ramoDeAtividade,
             simplesNacionalAtivo = t.simplesNacionalAtivo,
             fatorCompetitivo = t.fatorCompetitivo,
-            gestorDaConta = usuarioService.buscarPorUsuario(t.gestorDaContaUsuarioId),
+            gestorDaConta = usuarioService.buscarPorUsuario(t.usuarioCriadorId)!!,
             status = StatusCliente.ATIVO,
-            analistaDaConta = usuarioService.buscarPorUsuario(t.analistaDaContaUsuarioId)
+            analistaDaConta = usuarioService.buscarPorUsuario(t.usuarioCriadorId)!!
         )
     }
 }

@@ -8,6 +8,6 @@ import jakarta.persistence.Id
 @Entity
 data class Entidade (
     @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    val id : Long? = null,
-    val nome : String = ""
+    val id : Long?,
+    val nome : String
 )

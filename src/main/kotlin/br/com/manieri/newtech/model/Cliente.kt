@@ -6,26 +6,26 @@ import java.time.LocalDateTime
 @Entity
 data class Cliente (
     @Id
-    val cnpj: String = "",
-    val nomeFantasia: String = "",
-    val nomeReal: String = "",
+    val cnpj: String,
+    val nomeFantasia: String,
+    val nomeReal: String,
     val simplesNacionalAtivo: Boolean = false,
-    val ramoDeAtividade: String = "",
+    val ramoDeAtividade: String,
     @OneToMany(mappedBy = "cep")
-    val listaDeEnderecos: MutableList<Endereco> = mutableListOf(),
+    val listaDeEnderecos: MutableList<Endereco>,
     @OneToMany(mappedBy = "telefone")
-    val listaDeContatos: MutableList<Contato> = mutableListOf(),
-    val solicitacaoPedido: Boolean = false,
-    val statusEmpresa: Boolean = false,
+    val listaDeContatos: MutableList<Contato>,
+    val solicitacaoPedido: Boolean,
+    val statusEmpresa: Boolean,
     val dataDeCadastro: LocalDateTime = LocalDateTime.now(),
-    val status : StatusCliente = StatusCliente.ATIVO,
-    val fatorCompetitivo: String? = null,
+    val status : StatusCliente,
+    val fatorCompetitivo: String?,
     @ManyToOne
-    val usuarioCriador: Usuario? = null,
+    val usuarioCriador: Usuario,
     @ManyToOne
-    val gestorDaConta : Usuario? = null,
+    val gestorDaConta : Usuario?,
     @ManyToOne
-    val analistaDaConta : Usuario? = null
+    val analistaDaConta : Usuario?
 )
 
 

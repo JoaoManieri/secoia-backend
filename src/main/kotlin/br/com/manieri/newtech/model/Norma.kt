@@ -6,13 +6,13 @@ import jakarta.persistence.*
 data class Norma(
     @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
     val id: Long? = null,
-    val codigo: String = "",
-    val ano: Int = 0,
-    val titulo : String = "",
+    val codigo: String,
+    val ano: Int,
+    val titulo : String,
     @Enumerated(EnumType.STRING)
-    val idioma: Idioma = Idioma.PORTUGUES,
+    val idioma: Idioma,
     @ManyToOne
-    val usuarioCriador : Usuario? = null,
+    val usuarioCriador : Usuario,
     @ManyToOne
     val entidade: Entidade? = null
     )

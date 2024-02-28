@@ -6,9 +6,7 @@ import jakarta.persistence.*
 class Usuario(
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
         val id: Long? = null,
-        val nome: String = "",
+        val nome: String,
         @ManyToOne
         val departamento : Departamento? = null,
-//        @ManyToMany(mappedBy = "analistasDaConta")
-//        val clientes: MutableList<Cliente> = mutableListOf()
 )
