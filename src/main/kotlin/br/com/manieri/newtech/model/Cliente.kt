@@ -5,7 +5,8 @@ import java.time.LocalDateTime
 
 @Entity
 data class Cliente (
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    val id: Long? = null,
     val cnpj: String,
     val nomeFantasia: String,
     val nomeReal: String,

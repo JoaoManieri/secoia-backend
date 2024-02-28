@@ -16,7 +16,6 @@ class ClienteService(
     private val repository: ClienteRepository,
     private val clienteViewMapper: ClienteViewMapper,
     private val clienteFormMapper: ClienteFormMapper,
-    private val receitaFederalViewMapper: ReceitaFederalViewMapper
 ) {
     fun listar(): List<ClienteView> {
         return repository.findAll().stream().map {

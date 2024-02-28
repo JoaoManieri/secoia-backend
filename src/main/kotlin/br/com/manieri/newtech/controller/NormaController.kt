@@ -1,5 +1,6 @@
 package br.com.manieri.newtech.controller
 
+import br.com.manieri.newtech.dto.NormaForm
 import br.com.manieri.newtech.model.Cliente
 import br.com.manieri.newtech.model.Norma
 import br.com.manieri.newtech.service.NormaService
@@ -21,7 +22,17 @@ class NormaController(private val normaService: NormaService) {
     }
 
     @PostMapping
-    fun cadastrar(@RequestBody norma: Norma) {
+    fun cadastrar(@RequestBody norma: NormaForm) {
         normaService.cadastrar(norma)
+    }
+
+    @PutMapping
+    fun atualizar(@RequestBody norma: Norma) {
+        normaService.atualizar(norma)
+    }
+
+    @DeleteMapping("/{id}")
+    fun delete(@PathVariable id : Long){
+        normaService.delete(id)
     }
 }
