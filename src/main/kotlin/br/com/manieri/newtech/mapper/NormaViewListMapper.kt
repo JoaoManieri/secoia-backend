@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component
 class NormaViewListMapper : Mapper<Norma, NormaViewList> {
     override fun map(t: Norma): NormaViewList {
         return  NormaViewList(
+            id = t.id!!,
             entidade = t.entidade!!.nome,
             codigo = t.codigo,
             idioma = t.idioma.name,
