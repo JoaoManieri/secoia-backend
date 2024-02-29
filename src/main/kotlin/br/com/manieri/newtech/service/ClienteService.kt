@@ -1,10 +1,9 @@
 package br.com.manieri.newtech.service
 
-import br.com.manieri.newtech.dto.ClienteView
-import br.com.manieri.newtech.dto.NovoClienteForm
+import br.com.manieri.newtech.dto.cliente.ClienteView
+import br.com.manieri.newtech.dto.cliente.NovoClienteForm
 import br.com.manieri.newtech.mapper.ClienteFormMapper
 import br.com.manieri.newtech.mapper.ClienteViewMapper
-import br.com.manieri.newtech.externo.receitaFederal.mapper.ReceitaFederalViewMapper
 import br.com.manieri.newtech.model.Cliente
 import br.com.manieri.newtech.model.StatusCliente
 import br.com.manieri.newtech.repository.ClienteRepository

@@ -1,4 +1,4 @@
-package br.com.manieri.newtech.dto
+package br.com.manieri.newtech.dto.cliente
 
 import br.com.manieri.newtech.model.Contato
 import br.com.manieri.newtech.model.Endereco

@@ -1,8 +1,7 @@
 package br.com.manieri.newtech.controller
 
-import br.com.manieri.newtech.dto.ClienteView
-import br.com.manieri.newtech.dto.NovoClienteForm
-import br.com.manieri.newtech.externo.receitaFederal.dto.ReceitaFederalView
+import br.com.manieri.newtech.dto.cliente.ClienteView
+import br.com.manieri.newtech.dto.cliente.NovoClienteForm
 import br.com.manieri.newtech.model.Cliente
 import br.com.manieri.newtech.service.ClienteService
 import org.springframework.web.bind.annotation.DeleteMapping

@@ -1,10 +1,8 @@
 package br.com.manieri.newtech.mapper
 
-import br.com.manieri.newtech.dto.NovoClienteForm
+import br.com.manieri.newtech.dto.cliente.NovoClienteForm
 import br.com.manieri.newtech.model.Cliente
 import br.com.manieri.newtech.model.StatusCliente
-import br.com.manieri.newtech.model.Usuario
-import br.com.manieri.newtech.service.ClienteService
 import br.com.manieri.newtech.service.UsuarioService
 import org.springframework.stereotype.Component
 import java.time.LocalDateTime

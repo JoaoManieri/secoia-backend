@@ -1,4 +1,4 @@
-package br.com.manieri.newtech.dto
+package br.com.manieri.newtech.dto.norma
 
 import br.com.manieri.newtech.model.Idioma
 

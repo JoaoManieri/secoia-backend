@@ -1,6 +1,6 @@
 package br.com.manieri.newtech.mapper
 
-import br.com.manieri.newtech.dto.ClienteView
+import br.com.manieri.newtech.dto.cliente.ClienteView
 import br.com.manieri.newtech.model.Cliente
 import org.springframework.stereotype.Component
 

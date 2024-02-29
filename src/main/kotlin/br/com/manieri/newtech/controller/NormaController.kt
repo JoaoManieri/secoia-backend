@@ -1,10 +1,9 @@
 package br.com.manieri.newtech.controller
 
-import br.com.manieri.newtech.dto.NormaForm
-import br.com.manieri.newtech.model.Cliente
+import br.com.manieri.newtech.dto.norma.NormaForm
+import br.com.manieri.newtech.dto.norma.NormaViewList
 import br.com.manieri.newtech.model.Norma
 import br.com.manieri.newtech.service.NormaService
-import br.com.manieri.newtech.util.log
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.*
 class NormaController(private val normaService: NormaService) {
 
     @GetMapping
-    fun listar(): List<Norma> {
+    fun listar(): List<NormaViewList> {
         return normaService.listar()
     }
 

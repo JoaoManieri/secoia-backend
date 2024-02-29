@@ -1,6 +1,5 @@
 package br.com.manieri.newtech.repository
 
-import br.com.manieri.newtech.dto.ClienteView
 import br.com.manieri.newtech.model.Cliente
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query

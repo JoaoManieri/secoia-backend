@@ -1,10 +1,11 @@
 package br.com.manieri.newtech.mapper
 
 
-import br.com.manieri.newtech.dto.NormaForm
+import br.com.manieri.newtech.dto.norma.NormaForm
 import br.com.manieri.newtech.model.Norma
 import br.com.manieri.newtech.service.EntidadeService
 import br.com.manieri.newtech.service.UsuarioService
+import br.com.manieri.newtech.util.log
 import org.springframework.stereotype.Component
 
 @Component

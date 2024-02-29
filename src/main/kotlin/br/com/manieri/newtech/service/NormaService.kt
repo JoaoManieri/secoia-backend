@@ -1,21 +1,25 @@
 package br.com.manieri.newtech.service
 
-import br.com.manieri.newtech.dto.NormaForm
-import br.com.manieri.newtech.mapper.ClienteFormMapper
+import br.com.manieri.newtech.dto.norma.NormaForm
+import br.com.manieri.newtech.dto.norma.NormaViewList
 import br.com.manieri.newtech.mapper.NormaFormMapper
-import br.com.manieri.newtech.model.Cliente
+import br.com.manieri.newtech.mapper.NormaViewListMapper
 import br.com.manieri.newtech.model.Norma
 import br.com.manieri.newtech.repository.NormaRepository
 import org.springframework.stereotype.Service
+import java.util.stream.Collectors
 
 @Service
 class NormaService(
     private var repository: NormaRepository,
     private val normaFormMapper: NormaFormMapper,
+    private val normaViewListMapper: NormaViewListMapper
     ) {
 
-    fun listar(): List<Norma> {
-        return repository.findAll()
+    fun listar(): List<NormaViewList> {
+        return repository.findAll().stream().map {
+            t -> normaViewListMapper.map(t)
+        }.collect(Collectors.toList())
     }
 
     fun buscaPorId(id: Long?): Norma? {
