@@ -16,28 +16,63 @@ VALUES ('Ana Silva', 1),
 
 INSERT INTO Entidade (id, nome)
 VALUES (0, 'ISO'),
-       (1, 'ABNT');
+       (1, 'ABNT'),
+       (2, 'MERCEDES'),
+       (3, 'FORD'),
+       (4, 'VOLKSWAGEN'),
+       (5, 'TOYOTA'),
+       (6, 'HONDA'),
+       (7, 'BMW');
 
 
-INSERT INTO Norma (id, codigo, ano, titulo, idioma,  entidade_id, usuario_criador_id)
+INSERT INTO Norma (id, codigo, ano, titulo, idioma, entidade_id, usuario_criador_id)
 VALUES (1, 'ISO 9001', 2022, 'Sistemas de gestão da qualidade - Requisitos', 'PORTUGUES', 1, 1),
        (2, 'ISO 14001', 2022, 'Sistemas de gestão ambiental - Requisitos com orientações para uso', 'PORTUGUES', 1, 1),
        (3, 'ABNT NBR 5410', 2004, 'Instalações elétricas de baixa tensão', 'PORTUGUES', 1, 1),
        (4, 'ISO 27001', 2013, 'Sistemas de gestão de segurança da informação - Requisitos', 'PORTUGUES', 1, 2),
-       (5, 'ISO/IEC 27002', 2013, 'Tecnologia da informação - Técnicas de segurança - Código de prática para a gestão de segurança da informação', 'PORTUGUES', 1, NULL),
-       (6, 'ABNT NBR 9050', 2021, 'Acessibilidade a edificações, mobiliário, espaços e equipamentos urbanos', 'PORTUGUES', 1, 2),
+       (5, 'ISO/IEC 27002', 2013,
+        'Tecnologia da informação - Técnicas de segurança - Código de prática para a gestão de segurança da informação',
+        'PORTUGUES', 1, NULL),
+       (6, 'ABNT NBR 9050', 2021, 'Acessibilidade a edificações, mobiliário, espaços e equipamentos urbanos',
+        'PORTUGUES', 1, 2),
        (7, 'ISO 45001', 2018, 'Sistemas de gestão de segurança e saúde ocupacional - Requisitos', 'PORTUGUES', 1, 2),
        (8, 'ABNT NBR 5419', 2015, 'Proteção contra descargas atmosféricas', 'PORTUGUES', 1, 3),
        (9, 'ISO 26000', 2010, 'Diretrizes sobre responsabilidade social', 'PORTUGUES', 1, 4),
-       (10, 'ABNT NBR 14724', 2011, 'Informação e documentação - Trabalhos acadêmicos - Apresentação', 'PORTUGUES', 1, 4),
+       (10, 'ABNT NBR 14724', 2011, 'Informação e documentação - Trabalhos acadêmicos - Apresentação', 'PORTUGUES', 1,
+        4),
        (11, 'ISO 31000', 2018, 'Gestão de riscos - Diretrizes', 'PORTUGUES', 1, 2),
        (12, 'ISO 9000', 2005, 'Sistemas de gestão da qualidade - Fundamentos e vocabulário', 'PORTUGUES', 1, 3),
        (13, 'ABNT NBR 6493', 1994, 'Representação de projetos de arquitetura', 'PORTUGUES', 1, 3),
        (14, 'ISO 10015', 1999, 'Diretrizes para treinamento', 'PORTUGUES', 1, 2),
-       (15, 'ABNT NBR 10520', 2002, 'Informação e documentação - Citações em documentos - Apresentação', 'PORTUGUES', 1, 1),
+       (15, 'ABNT NBR 10520', 2002, 'Informação e documentação - Citações em documentos - Apresentação', 'PORTUGUES', 1,
+        1),
        (16, 'ISO 14000', 2004, 'Sistemas de gestão ambiental - Fundamentos e técnicas', 'PORTUGUES', 1, 2),
        (17, 'ABNT NBR 5460', 1989, 'Iluminação - Terminologia', 'PORTUGUES', 1, 1),
        (18, 'ISO 19011', 2018, 'Diretrizes para auditoria de sistemas de gestão', 'PORTUGUES', 1, 1),
        (19, 'ABNT NBR 15287', 2011, 'Projeto de pesquisa - Apresentação', 'PORTUGUES', 1, 1),
-       (20, 'ISO 14031', 2013, 'Avaliação do desempenho ambiental - Diretrizes', 'PORTUGUES', 1, 1);
+       (20, 'ISO 14031', 2013, 'Avaliação do desempenho ambiental - Diretrizes', 'PORTUGUES', 1, 1),
+       (21, 'ISO 9001', 2022, 'Sistemas de gestão da qualidade - Requisitos', 'PORTUGUES', 3, 1),
+       (22, 'ISO 14001', 2022, 'Sistemas de gestão ambiental - Requisitos com orientações para uso', 'PORTUGUES', 3, 1),
+       (23, 'ABNT NBR 5410', 2004, 'Instalações elétricas de baixa tensão', 'PORTUGUES', 3, 1),
+       (24, 'ISO 27001', 2013, 'Sistemas de gestão de segurança da informação - Requisitos', 'PORTUGUES', 3, 2),
+       -- Entidade VOLKSWAGEN (id 4)
+       (25, 'ISO 9001', 2022, 'Sistemas de gestão da qualidade - Requisitos', 'PORTUGUES', 4, 1),
+       (26, 'ISO 14001', 2022, 'Sistemas de gestão ambiental - Requisitos com orientações para uso', 'PORTUGUES', 4, 1),
+       (27, 'ABNT NBR 5410', 2004, 'Instalações elétricas de baixa tensão', 'PORTUGUES', 4, 1),
+       (28, 'ISO 27001', 2013, 'Sistemas de gestão de segurança da informação - Requisitos', 'PORTUGUES', 4, 2),
+       -- Entidade TOYOTA (id 5)
+       (29, 'ISO 9001', 2022, 'Sistemas de gestão da qualidade - Requisitos', 'PORTUGUES', 5, 1),
+       (30, 'ISO 14001', 2022, 'Sistemas de gestão ambiental - Requisitos com orientações para uso', 'PORTUGUES', 5, 1),
+       (31, 'ABNT NBR 5410', 2004, 'Instalações elétricas de baixa tensão', 'PORTUGUES', 5, 1),
+       (32, 'ISO 27001', 2013, 'Sistemas de gestão de segurança da informação - Requisitos', 'PORTUGUES', 5, 2),
+       -- Entidade HONDA (id 6)
+       (33, 'ISO 9001', 2022, 'Sistemas de gestão da qualidade - Requisitos', 'PORTUGUES', 6, 1),
+       (34, 'ISO 14001', 2022, 'Sistemas de gestão ambiental - Requisitos com orientações para uso', 'PORTUGUES', 6, 1),
+       (35, 'ABNT NBR 5410', 2004, 'Instalações elétricas de baixa tensão', 'PORTUGUES', 6, 1),
+       (36, 'ISO 27001', 2013, 'Sistemas de gestão de segurança da informação - Requisitos', 'PORTUGUES', 6, 2),
+       -- Entidade BMW (id 7)
+       (37, 'ISO 9001', 2022, 'Sistemas de gestão da qualidade - Requisitos', 'PORTUGUES', 7, 1),
+       (38, 'ISO 14001', 2022, 'Sistemas de gestão ambiental - Requisitos com orientações para uso', 'PORTUGUES', 7, 1),
+       (39, 'ABNT NBR 5410', 2004, 'Instalações elétricas de baixa tensão', 'PORTUGUES', 7, 1),
+       (40, 'ISO 27001', 2013, 'Sistemas de gestão de segurança da informação - Requisitos', 'PORTUGUES', 7, 2);
 
