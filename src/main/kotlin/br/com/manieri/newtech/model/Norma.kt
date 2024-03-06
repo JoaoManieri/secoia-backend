@@ -10,6 +10,8 @@ data class Norma(
     val id: Long? = null,
     val codigo: String,
     val ano: Int,
+//    @Column(nullable = false)
+//    val depreciada : Boolean = false,
     @CreationTimestamp
     val dataDeCadastro : LocalDateTime = LocalDateTime.now(),
     @CreationTimestamp
