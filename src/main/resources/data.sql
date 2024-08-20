@@ -1,0 +1,94 @@
+SELECT * FROM Departamento
+
+-- INSERT INTO Departamento (nome)
+-- VALUES ('Recursos Humanos'),
+--        ('Finanças'),
+--        ('Marketing'),
+--        ('Tecnologia');
+--
+-- INSERT INTO Usuario (nome, departamento_id)
+-- VALUES ('Ana Silva', 1),
+--        ('João Santos', 1),
+--        ('Maria Oliveira', 2),
+--        ('Pedro Costa', 2),
+--        ('Carla Pereira', 3),
+--        ('Luiz Fernandes', 3),
+--        ('Mariana Rodrigues', 4),
+--        ('Rafael Almeida', 4);
+
+-- INSERT INTO Entidade (id, nome)
+-- VALUES (0, 'ISO'),
+--        (1, 'ABNT'),
+--        (2, 'MERCEDES'),
+--        (3, 'FORD'),
+--        (4, 'VOLKSWAGEN'),
+--        (5, 'TOYOTA'),
+--        (6, 'HONDA'),
+--        (7, 'BMW');
+--
+--
+-- -- INSERT INTO Cliente (cnpj, nomeFantasia, nomeReal, simplesNacionalAtivo, ramoDeAtividade, solicitacaoPedido, statusEmpresa, dataDeCadastro, status, fatorCompetitivo, usuarioCriador_id, gestorDaConta_id, analistaDaConta_id)
+-- -- VALUES
+-- --     ('12.345.678/0001-90', 'Tech Innovators', 'Tech Innovators Ltda.', TRUE, 'Tecnologia da Informação', TRUE, TRUE, '2023-08-01T09:30:00', 'ATIVO', 'Inovação em TI', 1, NULL, NULL),
+-- --     ('98.765.432/0001-22', 'ConstruPlus', 'Construção Plus S/A', FALSE, 'Construção Civil', FALSE, TRUE, '2023-07-15T11:45:00', 'ATIVO', 'Qualidade Superior', 1, NULL, NULL,
+-- --     ('23.456.789/0001-55', 'AgroForte', 'Agro Forte Agropecuária Ltda.', TRUE, 'Agropecuária', TRUE, TRUE, '2023-06-12T10:00:00', 'INATIVO', NULL, 1, NULL, NULL),
+-- --     ('34.567.890/0001-66', 'ModaViva', 'Moda Viva Confecções', FALSE, 'Confecções e Vestuário', TRUE, TRUE, '2023-05-18T14:20:00', 'ATIVO', 'Sustentabilidade', 1, NULL, NULL),
+-- --     ('45.678.901/0001-77', 'EletroFast', 'Eletro Fast Comércio', TRUE, 'Comércio de Eletrônicos', TRUE, TRUE, '2023-04-22T16:30:00', 'ATIVO', 'Entrega Rápida', 1, NULL, NULL),
+-- --     ('56.789.012/0001-88', 'Alimentos Prime', 'Prime Alimentos S/A', FALSE, 'Indústria Alimentícia', FALSE, TRUE, '2023-03-25T12:50:00', 'INATIVO', 'Qualidade Certificada', 1, NULL, NULL),
+-- --     ('67.890.123/0001-99', 'TransLogística', 'Trans Logística e Transporte', TRUE, 'Logística e Transporte', TRUE, TRUE, '2023-02-14T08:10:00', 'ATIVO', 'Abrangência Nacional', 1, NULL, NULL),
+-- --     ('78.901.234/0001-11', 'Saúde+Med', 'Saúde+ Med Distribuidora', FALSE, 'Distribuição de Medicamentos', TRUE, TRUE, '2023-01-30T13:40:00', 'ATIVO', 'Parcerias Estratégicas', 1, NULL, NULL),
+-- --     ('89.012.345/0001-22', 'EcoSoluções', 'Eco Soluções Ambientais', TRUE, 'Consultoria Ambiental', TRUE, TRUE, '2022-12-18T15:55:00', 'INATIVO', 'Soluções Sustentáveis', 1, NULL, NULL),
+-- --     ('90.123.456/0001-33', 'EducaMais', 'EducaMais Educação Ltda.', FALSE, 'Educação', TRUE, TRUE, '2022-11-05T17:15:00', 'ATIVO', 'Tecnologia Educacional', 1, NULL, NULL);
+--
+--
+-- INSERT INTO Norma (id, codigo, ano, titulo, idioma, entidade_id, usuario_criador_id)
+-- VALUES (1, 'ISO 9001', 2022, 'Sistemas de gestão da qualidade - Requisitos', 'PORTUGUES', 1, 1),
+--        (2, 'ISO 14001', 2022, 'Sistemas de gestão ambiental - Requisitos com orientações para uso', 'PORTUGUES', 1, 1),
+--        (3, 'ABNT NBR 5410', 2004, 'Instalações elétricas de baixa tensão', 'PORTUGUES', 1, 1),
+--        (4, 'ISO 27001', 2013, 'Sistemas de gestão de segurança da informação - Requisitos', 'PORTUGUES', 1, 2),
+--        (5, 'ISO/IEC 27002', 2013,
+--         'Tecnologia da informação - Técnicas de segurança - Código de prática para a gestão de segurança da informação',
+--         'PORTUGUES', 1, NULL),
+--        (6, 'ABNT NBR 9050', 2021, 'Acessibilidade a edificações, mobiliário, espaços e equipamentos urbanos',
+--         'PORTUGUES', 1, 2),
+--        (7, 'ISO 45001', 2018, 'Sistemas de gestão de segurança e saúde ocupacional - Requisitos', 'PORTUGUES', 1, 2),
+--        (8, 'ABNT NBR 5419', 2015, 'Proteção contra descargas atmosféricas', 'PORTUGUES', 1, 3),
+--        (9, 'ISO 26000', 2010, 'Diretrizes sobre responsabilidade social', 'PORTUGUES', 1, 4),
+--        (10, 'ABNT NBR 14724', 2011, 'Informação e documentação - Trabalhos acadêmicos - Apresentação', 'PORTUGUES', 1,
+--         4),
+--        (11, 'ISO 31000', 2018, 'Gestão de riscos - Diretrizes', 'PORTUGUES', 1, 2),
+--        (12, 'ISO 9000', 2005, 'Sistemas de gestão da qualidade - Fundamentos e vocabulário', 'PORTUGUES', 1, 3),
+--        (13, 'ABNT NBR 6493', 1994, 'Representação de projetos de arquitetura', 'PORTUGUES', 1, 3),
+--        (14, 'ISO 10015', 1999, 'Diretrizes para treinamento', 'PORTUGUES', 1, 2),
+--        (15, 'ABNT NBR 10520', 2002, 'Informação e documentação - Citações em documentos - Apresentação', 'PORTUGUES', 1,
+--         1),
+--        (16, 'ISO 14000', 2004, 'Sistemas de gestão ambiental - Fundamentos e técnicas', 'PORTUGUES', 1, 2),
+--        (17, 'ABNT NBR 5460', 1989, 'Iluminação - Terminologia', 'PORTUGUES', 1, 1),
+--        (18, 'ISO 19011', 2018, 'Diretrizes para auditoria de sistemas de gestão', 'PORTUGUES', 1, 1),
+--        (19, 'ABNT NBR 15287', 2011, 'Projeto de pesquisa - Apresentação', 'PORTUGUES', 1, 1),
+--        (20, 'ISO 14031', 2013, 'Avaliação do desempenho ambiental - Diretrizes', 'PORTUGUES', 1, 1),
+--        (21, 'ISO 9001', 2022, 'Sistemas de gestão da qualidade - Requisitos', 'PORTUGUES', 3, 1),
+--        (22, 'ISO 14001', 2022, 'Sistemas de gestão ambiental - Requisitos com orientações para uso', 'PORTUGUES', 3, 1),
+--        (23, 'ABNT NBR 5410', 2004, 'Instalações elétricas de baixa tensão', 'PORTUGUES', 3, 1),
+--        (24, 'ISO 27001', 2013, 'Sistemas de gestão de segurança da informação - Requisitos', 'PORTUGUES', 3, 2),
+--        -- Entidade VOLKSWAGEN (id 4)
+--        (25, 'ISO 9001', 2022, 'Sistemas de gestão da qualidade - Requisitos', 'PORTUGUES', 4, 1),
+--        (26, 'ISO 14001', 2022, 'Sistemas de gestão ambiental - Requisitos com orientações para uso', 'PORTUGUES', 4, 1),
+--        (27, 'ABNT NBR 5410', 2004, 'Instalações elétricas de baixa tensão', 'PORTUGUES', 4, 1),
+--        (28, 'ISO 27001', 2013, 'Sistemas de gestão de segurança da informação - Requisitos', 'PORTUGUES', 4, 2),
+--        -- Entidade TOYOTA (id 5)
+--        (29, 'ISO 9001', 2022, 'Sistemas de gestão da qualidade - Requisitos', 'PORTUGUES', 5, 1),
+--        (30, 'ISO 14001', 2022, 'Sistemas de gestão ambiental - Requisitos com orientações para uso', 'PORTUGUES', 5, 1),
+--        (31, 'ABNT NBR 5410', 2004, 'Instalações elétricas de baixa tensão', 'PORTUGUES', 5, 1),
+--        (32, 'ISO 27001', 2013, 'Sistemas de gestão de segurança da informação - Requisitos', 'PORTUGUES', 5, 2),
+--        -- Entidade HONDA (id 6)
+--        (33, 'ISO 9001', 2022, 'Sistemas de gestão da qualidade - Requisitos', 'PORTUGUES', 6, 1),
+--        (34, 'ISO 14001', 2022, 'Sistemas de gestão ambiental - Requisitos com orientações para uso', 'PORTUGUES', 6, 1),
+--        (35, 'ABNT NBR 5410', 2004, 'Instalações elétricas de baixa tensão', 'PORTUGUES', 6, 1),
+--        (36, 'ISO 27001', 2013, 'Sistemas de gestão de segurança da informação - Requisitos', 'PORTUGUES', 6, 2),
+--        -- Entidade BMW (id 7)
+--        (37, 'ISO 9001', 2022, 'Sistemas de gestão da qualidade - Requisitos', 'PORTUGUES', 7, 1),
+--        (38, 'ISO 14001', 2022, 'Sistemas de gestão ambiental - Requisitos com orientações para uso', 'PORTUGUES', 7, 1),
+--        (39, 'ABNT NBR 5410', 2004, 'Instalações elétricas de baixa tensão', 'PORTUGUES', 7, 1),
+--        (40, 'ISO 27001', 2013, 'Sistemas de gestão de segurança da informação - Requisitos', 'PORTUGUES', 7, 2);
+--
